@@ -6,294 +6,180 @@ import Layout from '@/components/layouts';
 import { appConfigs } from '@/constants/configs';
 import Link from 'next/link';
 import { ReactElement } from 'react';
-import { FaTrophy, FaUsers, FaExchangeAlt, FaStar, FaQuestionCircle } from 'react-icons/fa';
-
-const topPlayers = [
-  {
-    "id": 68246,
-    "name": "Vini Jr.",
-    "fullName": "Vinícius José Paixão de Oliveira Júnior",
-    "price": 15,
-    "shirtNumber": 7,
-    "position": "Forward",
-    "status": "Available",
-    "teamId": 15,
-    "imageSrc": "https://assets.laliga.com/squad/2025/t186/p246333/2048x2225/p246333_t186_2025_0_001_000.png",
-    "country": "BR",
-    "dateOfBirth": "2000-07-12T00:00:00",
-    "weight": 73,
-    "height": 176,
-    "team": {
-      "id": 15,
-      "name": "Real Madrid",
-      "abbreviation": "RMA",
-      "mainColor": "#ffffff",
-      "secondaryColor": "#FEBE10",
-      "shirtImgSrc": "https://i.ibb.co/PvQfNFVC/rma-removebg-preview.png",
-      "logoSrc": "https://assets.laliga.com/assets/2019/06/07/xlarge/real-madrid.png"
-    }
-  },
-  {
-    "id": 68206,
-    "name": "Lamine Yamal",
-    "fullName": "Lamine Yamal Nasraoui Ebana",
-    "price": 7,
-    "shirtNumber": 19,
-    "position": "Forward",
-    "status": "Available",
-    "teamId": 4,
-    "imageSrc": "https://assets.laliga.com/squad/2025/t178/p593109/2048x2225/p593109_t178_2025_0_001_000.png",
-    "country": "ES",
-    "dateOfBirth": "2007-07-13T00:00:00",
-    "weight": 72,
-    "height": 180,
-    "team": {
-      "id": 4,
-      "name": "FC Barcelona",
-      "abbreviation": "BAR",
-      "mainColor": "#0f39b8",
-      "secondaryColor": "#bc161c",
-      "shirtImgSrc": "https://i.ibb.co/hFWtr7J5/bar-removebg-preview.png",
-      "logoSrc": "https://assets.laliga.com/assets/2019/06/07/xlarge/barcelona.png"
-    },
-  },
-  {
-    "id": 68578,
-    "name": "Mbappé",
-    "fullName": "Kylian Mbappé",
-    "price": 15,
-    "shirtNumber": 9,
-    "position": "Forward",
-    "status": "Available",
-    "teamId": 15,
-    "imageSrc": "https://assets.laliga.com/squad/2025/t186/p220160/2048x2225/p220160_t186_2025_0_001_000.png",
-    "country": "FR",
-    "dateOfBirth": "1998-12-20T00:00:00",
-    "weight": 75,
-    "height": 178,
-    "team": {
-      "id": 15,
-      "name": "Real Madrid",
-      "abbreviation": "RMA",
-      "mainColor": "#ffffff",
-      "secondaryColor": "#FEBE10",
-      "shirtImgSrc": "https://i.ibb.co/PvQfNFVC/rma-removebg-preview.png",
-      "logoSrc": "https://assets.laliga.com/assets/2019/06/07/xlarge/real-madrid.png"
-    }
-  },
-  {
-    "id": 68187,
-    "name": "Griezmann",
-    "fullName": "Antoine Griezmann",
-    "price": 12,
-    "shirtNumber": 7,
-    "position": "Forward",
-    "status": "Available",
-    "teamId": 2,
-    "imageSrc": "https://assets.laliga.com/squad/2025/t175/p76650/2048x2225/p76650_t175_2025_0_001_000.png",
-    "country": "FR",
-    "dateOfBirth": "1991-03-21T00:00:00",
-    "weight": 73,
-    "height": 176,
-    "team": {
-      "id": 2,
-      "name": "Atlético de Madrid",
-      "abbreviation": "ATM",
-      "mainColor": "#f21e27",
-      "secondaryColor": "#ffffff",
-      "shirtImgSrc": "https://i.ibb.co/7tLSNhLW/atm-removebg-preview.png",
-      "logoSrc": "https://assets.laliga.com/assets/2024/06/17/xlarge/cbc5c8cc8c3e8abd0e175c00ee53b723.png"
-    }
-  },
-  {
-    "id": 68199,
-    "name": "Pedri",
-    "fullName": "Pedro González López",
-    "price": 9,
-    "shirtNumber": 8,
-    "position": "Midfielder",
-    "status": "Available",
-    "teamId": 4,
-    "imageSrc": "https://assets.laliga.com/squad/2025/t178/p490541/2048x2225/p490541_t178_2025_0_001_000.png",
-    "country": "ES",
-    "dateOfBirth": "2002-11-25T00:00:00",
-    "weight": 60,
-    "height": 174,
-    team: {
-      "id": 4,
-      "name": "FC Barcelona",
-      "abbreviation": "BAR",
-      mainColor: "#0f39b8",
-      "secondaryColor": "#bc161c",
-      "shirtImgSrc": "https://i.ibb.co/hFWtr7J5/bar-removebg-preview.png",
-      "logoSrc": "https://assets.laliga.com/assets/2019/06/07/xlarge/barcelona.png"
-    }
-  }
-];
-
-const testimonials = [
-  {
-    name: 'Carlos M.',
-    text: "LaLiga Fantasy has made every matchday more exciting! Competing with friends is a blast.",
-    avatar: 'https://images.unsplash.com/photo-1633332755192-727a05c4013d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YXZhdGFyfGVufDB8fDB8fHww',
-  },
-  {
-    name: 'Sara G.',
-    text: "I love the real-time points and the transfer market. It's the best fantasy football game out there!",
-    avatar: 'https://t3.ftcdn.net/jpg/02/10/52/66/360_F_210526625_wcxUSGitfvdLr2MCGpHBKJfvHH17KpS7.jpg',
-  },
-  {
-    name: 'Luis R.',
-    text: "The interface is super easy to use and the community is awesome. Highly recommended!",
-    avatar: 'https://t4.ftcdn.net/jpg/02/19/63/31/360_F_219633151_BW6TD8D1EA9OqZu4JgdmeJGg4JBaiAHj.jpg',
-  },
-];
+import { FaTrophy, FaUsers, FaExchangeAlt, FaStar, FaQuestionCircle, FaFutbol, FaChartBar, FaGlobe } from 'react-icons/fa';
 
 const faqs = [
   {
-    question: "Is LaLiga Fantasy free to play?",
-    answer: "Yes! You can play for free and compete in public or private leagues.",
+    question: "Is this Fantasy Football game free to play?",
+    answer: "Yes! You can play for absolutely free and compete in both public and private leagues.",
   },
   {
-    question: "How are points calculated?",
-    answer: "Points are based on real-life LaLiga player performances, including goals, assists, clean sheets, and more.",
+    question: "How exactly are points calculated?",
+    answer: "Points are calculated based on real-life player performances. This includes goals, assists, clean sheets, saves, and more.",
   },
   {
-    question: "Can I play with my friends?",
-    answer: "Absolutely! Create a private league and invite your friends to join the competition.",
+    question: "Can I create private leagues with my friends?",
+    answer: "Absolutely! You can create custom private leagues, invite your friends, and enjoy head-to-head competition.",
   },
 ];
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen text-white flex flex-col">
+    <div className="min-h-screen text-gray-800 bg-white flex flex-col font-sans selection:bg-main selection:text-white">
       {/* Hero Section */}
-      <section className="flex-1 flex py-20 flex-col items-center justify-center text-center px-6 bg-gradient-to-br from-secondary via-secondary to-white relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none opacity-20 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-main via-mid-gray to-secondary"></div>
-        <img
-          src={appConfigs.logo}
-          alt={`${appConfigs.appName} Logo`}
-          className="w-36 h-36 mb-8 rounded-lg shadow-2xl bg-white object-contain border-4 border-main"
-        />
-        <h1 className="text-6xl font-extrabold mb-4 text-main drop-shadow-lg">{appConfigs.appName ?? 'LaLiga Fantasy'}</h1>
-        <h2 className="text-3xl font-bold mb-8 leading-tight text-third">
-          Build your dream team.<br />
-          Dominate LaLiga <span role="img" aria-label="soccer">⚽</span>
-        </h2>
-        <p className="text-xl md:text-2xl max-w-2xl mb-10 text-gray-100 font-medium">
-          Pick your favorite LaLiga players, earn points based on real-life performances, and challenge friends in custom leagues.
-        </p>
-        <Link href="/register" passHref>
-          <button className="btn bg-main hover:bg-red-500 text-white px-10 py-4 rounded-2xl text-xl font-bold transition shadow-xl border-2 border-main hover:border-red-500 focus:outline-none focus:ring-4 focus:ring-main/50">
-            Get Started Now
-          </button>
-        </Link>
+      <section className="relative w-full py-32 px-6 flex flex-col items-center justify-center text-center overflow-hidden bg-gradient-to-br from-indigo-900 via-purple-900 to-black text-white">
+        <div className="absolute inset-0 z-0 opacity-30 bg-[url('https://images.unsplash.com/photo-1518605368461-1ee7e163b276?q=80&w=2938&auto=format&fit=crop')] bg-cover bg-center mix-blend-overlay"></div>
+        <div className="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
+        
+        <div className="relative z-20 max-w-5xl mx-auto flex flex-col items-center">
+          <div className="mb-8 inline-flex items-center justify-center p-3 bg-white/10 rounded-full backdrop-blur-sm border border-white/20">
+            <FaFutbol className="text-3xl text-green-400 mr-3 animate-spin-slow" />
+            <span className="text-sm font-bold tracking-widest uppercase text-green-400">The Next Generation of Fantasy Sports</span>
+          </div>
+          
+          <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight drop-shadow-2xl">
+            Build Your Ultimate <br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600">Dream Team</span>
+          </h1>
+          
+          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mb-10 font-light">
+            Draft real-world superstars, make strategic transfers, and watch your team earn points live. Compete against thousands of managers worldwide.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Link href="/register" passHref>
+              <button className="bg-green-500 hover:bg-green-600 text-black px-10 py-4 rounded-full text-xl font-bold transition transform hover:-translate-y-1 shadow-lg hover:shadow-green-500/50">
+                Play For Free
+              </button>
+            </Link>
+            <Link href="/how-to-play" passHref>
+              <button className="bg-transparent border-2 border-white hover:bg-white hover:text-black text-white px-10 py-4 rounded-full text-xl font-bold transition transform hover:-translate-y-1">
+                How It Works
+              </button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Ribbon */}
+      <section className="bg-green-500 text-black py-8">
+        <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-x divide-green-600">
+          <div>
+            <h3 className="text-4xl font-black">500+</h3>
+            <p className="font-semibold uppercase text-sm mt-1">Real Players</p>
+          </div>
+          <div>
+            <h3 className="text-4xl font-black">Real-Time</h3>
+            <p className="font-semibold uppercase text-sm mt-1">Live Scoring</p>
+          </div>
+          <div>
+            <h3 className="text-4xl font-black">15</h3>
+            <p className="font-semibold uppercase text-sm mt-1">Squad Size</p>
+          </div>
+          <div>
+            <h3 className="text-4xl font-black">Global</h3>
+            <p className="font-semibold uppercase text-sm mt-1">Competitions</p>
+          </div>
+        </div>
       </section>
 
       {/* Features Section */}
-      <section className="max-w-6xl text-center mx-auto py-20 px-6 border-b-4 border-main">
-        <h2 className="text-4xl font-bold text-main mb-12">Why Play LaLiga Fantasy?</h2>
-        <div className="grid md:grid-cols-3 gap-10 text-white">
-          <HomeBasicCard
-            icon={<FaTrophy />}
-            title="Real-time Points"
-            description="Earn points based on actual LaLiga player performance — every pass, goal, and assist counts!"
-            overlayImage="/main/pattern.svg"
-          />
-          <HomeBasicCard
-            icon={<FaUsers />}
-            title="Create Leagues"
-            description="Challenge your friends in private leagues or join public competitions to show your tactical skills."
-            overlayImage="/main/pattern.svg"
-          />
-          <HomeBasicCard
-            icon={<FaExchangeAlt />}
-            title="Transfer Market"
-            description="Buy and sell players every week, just like a real manager. Make smart trades and climb the rankings!"
-            overlayImage="/main/pattern.svg"
-          />
+      <section className="max-w-7xl mx-auto py-24 px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-extrabold text-gray-900 mb-4">Why Choose Our Platform?</h2>
+          <p className="text-xl text-gray-500 max-w-2xl mx-auto">We've rebuilt the fantasy football experience from the ground up, prioritizing live data, deep analytics, and seamless usability.</p>
         </div>
-      </section>
-
-      {/* Top Performers Section */}
-      <section className="max-w-6xl text-center mx-auto py-20 px-6 border-b-4 border-main">
-        <h2 className="text-4xl text-main font-bold text-center mb-12">🔥 Select Your Favourite Players</h2>
-        <div className="grid md:grid-cols-5 gap-10 text-white">
-          {topPlayers.map((player, idx) => (
-
-            <PitchPlayerCard key={idx} player={player} position='FRW' />
-          ))}
-        </div>
-      </section>
-
-      {/* How to Play Section */}
-      {/* How to Play Section */}
-      <section className="max-w-6xl text-center mx-auto py-20 px-6 border-b-4 border-main">
-        <h2 className="text-4xl font-bold text-main mb-12">🎮 How to Play</h2>
+        
         <div className="grid md:grid-cols-3 gap-10">
-          <HomeBasicCard
-            icon={<FaStar />}
-            title="1. Create Your Team"
-            description="Select your 15-man squad with a limited budget. Pick the best talents from LaLiga!"
-            overlayImage="/main/pattern.svg"
-          />
-          <HomeBasicCard
-            icon={<FaUsers />}
-            title="2. Set Your Lineup"
-            description="Choose your starting 11 and make tactical decisions before each gameweek."
-            overlayImage="/main/pattern.svg"
-          />
-          <HomeBasicCard
-            icon={<FaTrophy />}
-            title="3. Score & Win"
-            description="Earn points and climb the leaderboard. Win rewards by outperforming others!"
-            overlayImage="/main/pattern.svg"
-          />
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="max-w-4xl text-center mx-auto py-20 px-6 border-b-4 border-main">
-        <h2 className="text-4xl font-bold text-main mb-12">What Our Managers Say</h2>
-        <div className="grid md:grid-cols-3 gap-10">
-          {testimonials.map((t, idx) => (
-            <div key={idx} className="bg-secondary/90 p-8 rounded-2xl shadow-lg flex flex-col items-center hover:scale-105 transition-transform">
-              <img
-                src={t.avatar}
-                alt={t.name}
-                className="w-16 h-16 rounded-full mb-4 border-2 border-main object-cover bg-white"
-                loading="lazy"
-              />
-              <p className="text-gray-100 italic mb-3">"{t.text}"</p>
-              <span className="font-bold text-main">{t.name}</span>
+          <div className="bg-gray-50 rounded-2xl p-8 hover:shadow-xl transition-shadow border border-gray-100 group">
+            <div className="w-16 h-16 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
+              <FaChartBar />
             </div>
-          ))}
+            <h3 className="text-2xl font-bold mb-3 text-gray-900">Advanced Analytics</h3>
+            <p className="text-gray-600 leading-relaxed">
+              Gain the edge with xG, xA, and deep player statistics powered by real-time API integrations. Never draft blind again.
+            </p>
+          </div>
+
+          <div className="bg-gray-50 rounded-2xl p-8 hover:shadow-xl transition-shadow border border-gray-100 group">
+            <div className="w-16 h-16 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
+              <FaGlobe />
+            </div>
+            <h3 className="text-2xl font-bold mb-3 text-gray-900">Global Leagues</h3>
+            <p className="text-gray-600 leading-relaxed">
+              Create your own private mini-leagues or join massive public tournaments to prove you are the ultimate tactician.
+            </p>
+          </div>
+
+          <div className="bg-gray-50 rounded-2xl p-8 hover:shadow-xl transition-shadow border border-gray-100 group">
+            <div className="w-16 h-16 bg-green-100 text-green-600 rounded-xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
+              <FaExchangeAlt />
+            </div>
+            <h3 className="text-2xl font-bold mb-3 text-gray-900">Dynamic Market</h3>
+            <p className="text-gray-600 leading-relaxed">
+              Player prices fluctuate based on real-world performance and manager transfers. Buy low, sell high, and build squad value.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* How to Play Steps */}
+      <section className="bg-gray-900 text-white py-24 px-6">
+        <div className="max-w-6xl mx-auto text-center mb-16">
+          <h2 className="text-4xl font-extrabold mb-4">Three Steps to Glory</h2>
+          <p className="text-xl text-gray-400">It's simple to learn, but takes a mastermind to master.</p>
+        </div>
+        
+        <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-12">
+          <div className="relative">
+            <div className="text-8xl font-black text-gray-800 absolute -top-10 -left-6 z-0 opacity-50">1</div>
+            <div className="relative z-10">
+              <h3 className="text-2xl font-bold mb-4 text-green-400">Draft Your Squad</h3>
+              <p className="text-gray-300">You have a £100m budget. Select 15 players from across the league to form your balanced roster.</p>
+            </div>
+          </div>
+          <div className="relative">
+            <div className="text-8xl font-black text-gray-800 absolute -top-10 -left-6 z-0 opacity-50">2</div>
+            <div className="relative z-10">
+              <h3 className="text-2xl font-bold mb-4 text-green-400">Manage Weekly</h3>
+              <p className="text-gray-300">Choose your starting 11, pick a Captain for double points, and use your free transfers wisely.</p>
+            </div>
+          </div>
+          <div className="relative">
+            <div className="text-8xl font-black text-gray-800 absolute -top-10 -left-6 z-0 opacity-50">3</div>
+            <div className="relative z-10">
+              <h3 className="text-2xl font-bold mb-4 text-green-400">Win Prizes</h3>
+              <p className="text-gray-300">Watch your players score points in real-time. Climb the ranks to win weekly and seasonal rewards!</p>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="max-w-4xl text-center mx-auto py-20 px-6 border-b-4 border-main">
-        <h2 className="text-4xl font-bold text-main mb-10 flex items-center justify-center gap-2">
-          <FaQuestionCircle className="inline text-main mr-2" /> Frequently Asked Questions
-        </h2>
-        <div className="space-y-8 text-left">
+      <section className="max-w-4xl mx-auto py-24 px-6">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-extrabold text-gray-900 flex items-center justify-center gap-3">
+            <FaQuestionCircle className="text-indigo-600" /> Frequently Asked Questions
+          </h2>
+        </div>
+        <div className="space-y-6 text-left">
           {faqs.map((faq, idx) => (
-            <div key={idx} className="bg-secondary/80 p-6 rounded-xl shadow-md">
-              <h3 className="text-xl font-semibold text-main mb-2">{faq.question}</h3>
-              <p className="text-gray-100">{faq.answer}</p>
+            <div key={idx} className="bg-white border border-gray-200 p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">{faq.question}</h3>
+              <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* Final Call to Action */}
-      <section className="py-20 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-main mb-4">Ready to Prove You're the Ultimate Manager?</h2>
-          <p className="text-lg mb-8 text-secondary">Build your dream team, compete with friends, and dominate the league.</p>
+      <section className="py-24 px-6 bg-gradient-to-r from-green-500 to-emerald-600 text-black text-center">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-5xl font-black mb-6">The Season is Waiting.</h2>
+          <p className="text-2xl mb-10 font-medium text-green-900">Sign up in less than 60 seconds and start drafting your team.</p>
           <Link href="/register" passHref>
-            <button className="bg-main text-white hover:bg-black hover:text-main transition px-8 py-4 text-xl font-semibold rounded-full shadow-xl border-2 border-main hover:border-black focus:outline-none focus:ring-4 focus:ring-main/50">
-              Join LaLiga Fantasy Now
+            <button className="bg-black text-white hover:bg-gray-800 transition px-12 py-5 text-2xl font-bold rounded-full shadow-2xl hover:-translate-y-1 transform">
+              Start Managing Now
             </button>
           </Link>
         </div>

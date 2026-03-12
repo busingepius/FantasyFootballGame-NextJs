@@ -10,6 +10,7 @@ import Link from 'next/link';
 import { PlayersCardTable } from '@/components/tables/PlayersCardTable';
 import { IoMdFootball } from "react-icons/io";
 import { RowCard } from '@/components/Cards/RowCard';
+import ScoreboardWidget from '@/components/Scoreboard/ScoreboardWidget';
 import { PlayersSimpleTable } from '@/components/tables/PlayersSimpleTable';
 import { useGetDataQuery } from '@/services/api';
 import { RxTextAlignMiddle } from "react-icons/rx";
@@ -79,6 +80,8 @@ const PlayerDashboardHome = () => {
   return (
     <div className="space-y-6 p-12">
 
+      <ScoreboardWidget />
+
       <div className="flex justify-center items-center my-6 px-6">
         <div
           className={cn(
@@ -138,8 +141,8 @@ const PlayerDashboardHome = () => {
         </div>
       </div> */}
 
-      <div className='grid grid-cols-4'>
-        <div className='col-span-3'>
+      <div className='grid grid-cols-1 xl:grid-cols-4 gap-6'>
+        <div className='xl:col-span-3'>
           <div className='p-6 pr-2'>
             <div className="bg-white border border-mid-gray  shadow-md">
               <div className='p-6 bg-secondary'>
@@ -182,61 +185,61 @@ const PlayerDashboardHome = () => {
             </div>
           </div>
 
-          <div className='grid grid-cols-3 p-2'>
-            <div className="p-4">
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-2'>
+            <div className="p-4 transform transition duration-500 hover:scale-105">
               {topTotalPoints && (
                 <PlayersCardTable
                   title="TOTAL POINTS"
-                  link="/leaderboard/points"
+                  link="/dashboard/leaderboard/points"
                   topStats={topTotalPoints}
                 />
               )}
             </div>
-            <div className="p-4">
+            <div className="p-4 transform transition duration-500 hover:scale-105">
               {topGoals && (
                 <PlayersCardTable
                   title="GOALS"
-                  link="/leaderboard/goals"
+                  link="/dashboard/leaderboard/goals"
                   topStats={topGoals}
                 />
               )}
             </div>
 
-            <div className="p-4">
+            <div className="p-4 transform transition duration-500 hover:scale-105">
               {topAssists && (
                 <PlayersCardTable
                   title="ASSISTS"
-                  link="/leaderboard/assists"
+                  link="/dashboard/leaderboard/assists"
                   topStats={topAssists}
                 />
               )}
             </div>
 
-            <div className="p-4">
+            <div className="p-4 transform transition duration-500 hover:scale-105">
               {topCleanSheets && (
                 <PlayersCardTable
                   title="CLEAN SHEETS"
-                  link="/leaderboard/cleansheets"
+                  link="/dashboard/leaderboard/cleansheets"
                   topStats={topCleanSheets}
                 />
               )}
             </div>
 
-            <div className="p-4">
+            <div className="p-4 transform transition duration-500 hover:scale-105">
               {topMinutes && (
                 <PlayersCardTable
                   title="MINUTES PLAYED"
-                  link="/leaderboard/minutes"
+                  link="/dashboard/leaderboard/minutes"
                   topStats={topMinutes}
                 />
               )}
             </div>
 
-            <div className="p-4">
+            <div className="p-4 transform transition duration-500 hover:scale-105">
               {topSaves && (
                 <PlayersCardTable
                   title="SAVES"
-                  link="/leaderboard/saves"
+                  link="/dashboard/leaderboard/saves"
                   topStats={topSaves}
                 />
               )}

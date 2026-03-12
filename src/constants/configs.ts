@@ -1,4 +1,6 @@
 export const appConfigs = {
-    appName: process.env.NEXT_PUBLIC_APP_NAME,
-    logo: '/main/LaLiga-Logo.png'
-}
+  appName: 'Fantasy Football',
+  logo: '/images/football-logo.png', // Fallback or update public folder later
+  primaryColor: '#22c55e',
+  secondaryColor: '#1e293b',
+};

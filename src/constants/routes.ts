@@ -18,12 +18,12 @@ export const sideLinks = [
   { title: 'My Team', path: '/dashboard/my-team', icon: FaTshirt },
   { title: 'Transfers', path: '/dashboard/transfers', icon: FaExchangeAlt },
   { title: 'Pick Team', path: '/dashboard/pick-team', icon: VscGitPullRequestCreate},
-  // { title: 'Leaderboard', path: '/dashboard/leaderboard', icon: FaChartLine },
-  // { title: 'Settings', path: '/dashboard/settings', icon: FaCog },
+  { title: 'Leagues', path: '/dashboard/leagues', icon: FaUsers },
 ];
 
 export const sideAdminLinks = [
-  { title: 'Home', path: '/dashboard/admin', icon: FaHome },
+  { title: 'Admin Dashboard', path: '/admin', icon: FaShieldAlt },
+  { title: 'Home', path: '/dashboard', icon: FaHome },
   { title: 'My Squad', path: '/dashboard/admin/my-team', icon: FaTshirt },
   { title: 'Transfers', path: '/dashboard/admin/transfers', icon: FaExchangeAlt },
   { title: 'Leaderboard', path: '/dashboard/admin/leaderboard', icon: FaChartLine },
@@ -33,7 +33,7 @@ export const sideAdminLinks = [
 
 export const footerData = {
   description:
-    "LaLiga Fantasy is the ultimate fantasy football experience for fans of Spanish football. Build your dream team, compete with friends, track real-time player stats, and climb the leaderboard every gameweek. Stay connected with LaLiga like never before.",
+    "Fantasy Football is the ultimate fantasy experience for fans of global football. Build your dream team, compete with friends, track real-time player stats, and climb the leaderboard every gameweek.",
 
   links: [
     {
@@ -74,9 +74,9 @@ export const footerData = {
   ],
 
   social: [
-    { title: 'Facebook', path: 'https://facebook.com/laligafantasy', icon: FaFacebookF },
-    { title: 'Instagram', path: 'https://instagram.com/laligafantasy', icon: FaInstagram },
-    { title: 'Twitter', path: 'https://twitter.com/laligafantasy', icon: FaTwitter },
-    { title: 'YouTube', path: 'https://youtube.com/laligafantasy', icon: FaYoutube },
+    { title: 'Facebook', path: 'https://facebook.com/fantasyfootball', icon: FaFacebookF },
+    { title: 'Instagram', path: 'https://instagram.com/fantasyfootball', icon: FaInstagram },
+    { title: 'Twitter', path: 'https://twitter.com/fantasyfootball', icon: FaTwitter },
+    { title: 'YouTube', path: 'https://youtube.com/fantasyfootball', icon: FaYoutube },
   ]
 };

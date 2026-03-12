@@ -49,9 +49,10 @@ const authSlice = createSlice({
       try {
         const decoded = jwtDecode<any>(token);
         state.user = {
-          name: decoded['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'],
-          email: decoded['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress'],
-          role: decoded['http://schemas.microsoft.com/ws/2008/06/identity/claims/role']
+          name: decoded.name || decoded['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'],
+          email: decoded.email || decoded['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress'],
+          role: decoded.role || decoded['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'],
+          hasTeam: decoded.hasTeam
         };
       } catch (error) {
         state.user = null;

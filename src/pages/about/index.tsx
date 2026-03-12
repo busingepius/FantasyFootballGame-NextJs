@@ -16,7 +16,7 @@ export default function AboutPage() {
         <h1 className="text-5xl font-extrabold mb-3 text-main">{appConfigs.appName ?? 'LaLiga Fantasy'}</h1>
         <h2 className="text-3xl font-bold mb-6 leading-tight text-gray-300 uppercase">About Us</h2>
         <p className="max-w-2xl mx-auto text-lg text-gray-200">
-          Welcome to <span className="font-semibold text-main">{appConfigs.appName ?? 'LaLiga Fantasy'}</span> – the ultimate fantasy football experience for LaLiga fans! Build your dream team, compete with friends, and prove your football knowledge as you manage real LaLiga players and climb the leaderboards.
+          Welcome to <span className="font-semibold text-main">{appConfigs.appName ?? 'Fantasy Football'}</span> – the ultimate fantasy football experience for fans! Build your dream team, compete with friends, and prove your football knowledge as you manage real players and climb the leaderboards.
         </p>
       </section>
 
@@ -25,7 +25,7 @@ export default function AboutPage() {
         <div className='py-4'>
           <h3 className="text-2xl font-bold mb-2 text-main">Key Features</h3>
           <ul className="list-disc list-inside text-gray-800 dark:text-gray-200 space-y-2">
-            <li>Draft and manage your own LaLiga fantasy squad.</li>
+            <li>Draft and manage your own fantasy squad.</li>
             <li>Real-time points based on actual player performances.</li>
             <li>Challenge friends and join public or private leagues.</li>
             <li>Weekly transfers, captain choices, and tactical decisions.</li>
@@ -38,7 +38,7 @@ export default function AboutPage() {
         <div className='py-4'>
           <h3 className="text-2xl font-bold mb-2 text-main">Our Mission</h3>
           <p className="text-gray-800 dark:text-gray-200">
-            Our mission is to bring LaLiga fans closer to the action by offering an engaging, competitive, and social fantasy football platform. We strive to create a community where fans can connect, compete, and celebrate their passion for Spanish football.
+            Our mission is to bring fans closer to the action by offering an engaging, competitive, and social fantasy football platform. We strive to create a community where fans can connect, compete, and celebrate their passion for global football.
           </p>
         </div>
 
@@ -59,7 +59,7 @@ export default function AboutPage() {
         <div className='py-4'>
           <h3 className="text-2xl font-bold mb-2 text-main">Meet the Team</h3>
           <p className="text-gray-800 dark:text-gray-200 mb-2">
-            We are a group of passionate football fans, developers, and designers dedicated to delivering the best fantasy football experience for LaLiga supporters worldwide.
+            We are a group of passionate football fans, developers, and designers dedicated to delivering the best fantasy football experience for supporters worldwide.
           </p>
           <p className="text-gray-800 dark:text-gray-200">
             Have questions, feedback, or partnership inquiries? Reach out to us at{' '}

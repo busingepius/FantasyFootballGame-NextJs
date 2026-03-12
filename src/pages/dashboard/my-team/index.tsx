@@ -63,8 +63,8 @@ const PlayerDashboardHome = () => {
       <h1 className="text-2xl font-bold">My Team - {user?.name || 'Player'}</h1>
 
 
-      <div className='grid grid-cols-4'>
-        <div className='col-span-3'>
+      <div className='grid grid-cols-1 lg:grid-cols-4 gap-6'>
+        <div className='lg:col-span-3'>
           <div className='p-6 pr-2'>
             <div className="bg-white border border-mid-gray  shadow-md">
               {/* Header row */}
@@ -133,8 +133,8 @@ const PlayerDashboardHome = () => {
         </div>
 
       </div>
-      <div className='grid grid-cols-4'>
-        <div className='p-6 col-span-3'>
+      <div className='grid grid-cols-1 lg:grid-cols-4 gap-6'>
+        <div className='p-6 lg:col-span-3'>
           <Fixtures
             gameweek={1}
           />

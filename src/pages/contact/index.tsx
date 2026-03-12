@@ -56,15 +56,15 @@ export default function ContactPage() {
           alt={`${appConfigs.appName} Logo`}
           className="w-32 h-32 mb-6 rounded-lg shadow-lg bg-white object-contain"
         />
-        <h1 className="text-5xl font-extrabold mb-3 text-main">{appConfigs.appName ?? 'LaLiga Fantasy'}</h1>
+        <h1 className="text-5xl font-extrabold mb-3 text-main">{appConfigs.appName ?? 'Fantasy Football'}</h1>
         <h2 className="text-3xl font-bold mb-6 leading-tight text-gray-300 uppercase">Contact Us</h2>
         <p className="max-w-2xl mx-auto text-lg text-gray-200">
           Have questions, feedback, or partnership inquiries? Fill out the form below or reach us directly at{' '}
           <a
-            href="mailto:support@laligafantasy.com"
+            href="mailto:support@fantasyfootball.com"
             className="text-main underline hover:text-main/80"
           >
-            support@laligafantasy.com
+            support@fantasyfootball.com
           </a>
           .
         </p>
@@ -160,21 +160,21 @@ export default function ContactPage() {
           <p>
             <span className="font-semibold">Email:</span>{' '}
             <a
-              href="mailto:support@laligafantasy.com"
+              href="mailto:support@fantasyfootball.com"
               className="text-main underline hover:text-main/80"
             >
-              support@laligafantasy.com
+              support@fantasyfootball.com
             </a>
           </p>
           <p>
             <span className="font-semibold">Twitter:</span>{' '}
             <a
-              href="https://twitter.com/laligafantasy"
+              href="https://twitter.com/fantasyfootball"
               target="_blank"
               rel="noopener noreferrer"
               className="text-main underline hover:text-main/80"
             >
-              @laligafantasy
+              @fantasyfootball
             </a>
           </p>
           <p>

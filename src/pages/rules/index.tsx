@@ -15,7 +15,7 @@ export default function RulesPage() {
           alt={`${appConfigs.appName} Logo`}
           className="w-32 h-32 mb-6 rounded-lg shadow-lg bg-white object-contain"
         />
-        <h1 className="text-5xl font-extrabold mb-3 text-main">{appConfigs.appName ?? 'LaLiga Fantasy'}</h1>
+        <h1 className="text-5xl font-extrabold mb-3 text-main">{appConfigs.appName ?? 'Fantasy Football'}</h1>
         <h2 className="text-3xl font-bold mb-6 leading-tight text-gray-300 uppercase">Official Game Rules</h2>
         
       </section>
@@ -41,7 +41,7 @@ export default function RulesPage() {
               </div>
               <div className='mb-4'>
                 <p className='font-bold text-red-800 mb-2'>Players Per Team</p>
-                <p>You can select up to 3 players from a single LaLiga team.</p>
+                <p>You can select up to 3 players from a single real-world team.</p>
               </div>
             </AccordionContent>
           </AccordionItem>
@@ -142,7 +142,7 @@ export default function RulesPage() {
             <AccordionTrigger className="text-left text-lg font-semibold text-main px-4">Scoring</AccordionTrigger>
             <AccordionContent className="text-gray-300 text-sm space-y-2 bg-white p-4 text-secondary">
               <div className='mb-4'>
-                <p className='mb-2'>During the season, your fantasy football players will be allocated points based on their performance in the LaLiga.</p>
+                <p className='mb-2'>During the season, your fantasy football players will be allocated points based on their performance in real-world matches.</p>
                 <div className="p-4 bg-mid-gray rounded">
                   <div className="grid grid-cols-10 text-gray-400 mb-2">
                     <span className="col-span-9">Action</span>
