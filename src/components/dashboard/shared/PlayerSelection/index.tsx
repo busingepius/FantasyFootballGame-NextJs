@@ -1,9 +1,9 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { PriceRangeSlider } from "@/pages/dashboard/shared/PlayerSelection/PriceRangeSlider";
-import { PlayerSelectionTable } from '@/pages/dashboard/shared/PlayerSelection/PlayersTable';
+import { PriceRangeSlider } from "@/components/dashboard/shared/PlayerSelection/PriceRangeSlider";
+import { PlayerSelectionTable } from '@/components/dashboard/shared/PlayerSelection/PlayersTable';
 import { useGetDataQuery } from '@/services/api';
-import PlayerPositionRadio from '@/pages/dashboard/shared/PlayerSelection/PlayerPositionRadio';
+import PlayerPositionRadio from '@/components/dashboard/shared/PlayerSelection/PlayerPositionRadio';
 import { addPlayerToPosition } from "@/store/slices/transferSlice";
 import { pickTeamAddPlayer } from "@/store/slices/pickTeamSlice";
 import { useDispatch } from 'react-redux';

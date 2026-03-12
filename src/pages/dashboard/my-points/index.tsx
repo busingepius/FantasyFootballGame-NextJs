@@ -19,7 +19,7 @@ import { TransfersInfoCard } from '@/components/Cards/TransfersInfoCard';
 import { LeaguesRankingCard } from '@/components/Cards/LeaguesRankingCard';
 import { useCreateDataMutation, useGetDataQuery } from '@/services/api';
 import { selectTotalPoints, setmyTeamsFromServer } from '@/store/slices/myTeamSlice';
-import { MyTeamPitch } from './components/MyTeamPitch';
+import { MyTeamPitch } from '@/components/dashboard/my-points-components/MyTeamPitch';
 import dayjs from 'dayjs';
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { FaGamepad } from "react-icons/fa6";
