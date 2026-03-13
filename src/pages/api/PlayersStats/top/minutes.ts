@@ -6,11 +6,11 @@ export default function handler(
 ) {
   res.status(200).json({
     data: [
-      { player: { name: "Virgil van Dijk", id: 5 }, stat: 2880, team: "LIV" },
-      { player: { name: "William Saliba", id: 8 }, stat: 2880, team: "ARS" },
-      { player: { name: "Ruben Dias", id: 12 }, stat: 2790, team: "MCI" },
-      { player: { name: "Rodri", id: 20 }, stat: 2750, team: "MCI" },
-      { player: { name: "Jude Bellingham", id: 3 }, stat: 2600, team: "RMA" }
+      { player: { name: "Virgil van Dijk", id: 5 }, stat: 2880, team: { name: "LIV", logoSrc: "/main/rm.png" }, player: { name: "$2", id: $3, imageSrc: "/main/m.png" } },
+      { player: { name: "William Saliba", id: 8 }, stat: 2880, team: { name: "ARS", logoSrc: "/main/rm.png" }, player: { name: "$2", id: $3, imageSrc: "/main/m.png" } },
+      { player: { name: "Ruben Dias", id: 12 }, stat: 2790, team: { name: "MCI", logoSrc: "/main/rm.png" }, player: { name: "$2", id: $3, imageSrc: "/main/m.png" } },
+      { player: { name: "Rodri", id: 20 }, stat: 2750, team: { name: "MCI", logoSrc: "/main/rm.png" }, player: { name: "$2", id: $3, imageSrc: "/main/m.png" } },
+      { player: { name: "Jude Bellingham", id: 3 }, stat: 2600, team: { name: "RMA", logoSrc: "/main/rm.png" }, player: { name: "$2", id: $3, imageSrc: "/main/m.png" } }
     ]
   });
 }

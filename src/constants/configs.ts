@@ -1,6 +1,6 @@
 export const appConfigs = {
   appName: 'Fantasy Football',
-  logo: '/images/football-logo.png', // Fallback or update public folder later
+  logo: '/main/LaLiga-Logo.png', // Updated to use the available LaLiga logo
   primaryColor: '#22c55e',
   secondaryColor: '#1e293b',
 };
