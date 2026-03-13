@@ -6,7 +6,7 @@ export const PlayersCardTable = ({title,topStats,link}:PlayerCardTableData) => {
     if(topStats.length==0) return null;
     const top= topStats[0];
     return (
-        <div className="bg-white rounded-xl shadow-md min-w-xs max-w-sm border border-gray-200 uppercase">
+        <div className="bg-white rounded-xl shadow-md w-full border border-gray-200 uppercase">
             <div className='grid grid-cols-2 p-4'>
 
                 <div className='space-y-3 items-center text-gray-300 uppercase'>
