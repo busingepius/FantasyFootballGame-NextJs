@@ -1,6 +1,6 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
-import { useEffect, type ReactElement, type ReactNode } from "react";
+import { type ReactElement, type ReactNode } from "react";
 import type { NextPage } from "next";
 import { Provider } from 'react-redux';
 import Layout from '@/components/layouts';
@@ -9,7 +9,6 @@ import { store, persistor } from '@/store';
 import { PersistGate } from 'redux-persist/integration/react';
 import { AuthWrapper } from "@/hocs/AuthWrapper";
 import AppInitializer from '@/init/AppInitializer';
-import Head from 'next/head';
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -25,9 +24,6 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
 
   return (
     <>
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </Head>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <AppInitializer />
