@@ -40,29 +40,27 @@ export default function Sidebar() {
       : 'text-fourth';
 
   return (
-    <div className="fixed bottom-0 md:left-0 md:top-0 z-50 w-full h-16 md:h-screen md:w-16 bg-third flex md:flex-col overflow-x-auto md:overflow-hidden border-t md:border-t-0 md:border-r border-gray-200">
-      <div className="flex w-full md:w-16 h-16 md:h-auto flex-row md:flex-col space-x-4 md:space-x-0 md:space-y-10 items-center justify-center md:justify-center px-4 md:px-0">
+    <div className="fixed left-0 top-auto z-40 h-screen w-16 bg-white flex overflow-hidden">
+      <div className="h-auto w-16 flex flex-col space-y-10 items-center justify-center relative bg-third">
         {links.map(({ title, path, icon: Icon }) => (
           <Link
             key={path}
             href={path}
             className={cn(
-              'flex items-center rounded-lg cursor-pointer hover:text-main hover:bg-fourth hover:duration-300 hover:ease-linear focus:bg-secondary focus:text-main shrink-0',
+              'flex items-center rounded-lg cursor-pointer hover:text-main hover:bg-fourth hover:duration-300 hover:ease-linear focus:bg-secondary focus:text-main gap-1',
               isActive(path)
             )}
-            title={title}
           >
             <div className="h-10 w-10 flex items-center justify-center">
-              <Icon className="text-xl md:text-inherit" />
+              <Icon className="text-inherit" />
             </div>
           </Link>
         ))}
-      <div className="shrink-0 ml-auto md:ml-0 md:mt-auto">
+      <div>
         <button
           key={"logout"}
           onClick={handleLogout}
-          className="flex items-center rounded-lg cursor-pointer text-dark-third bg-fourth hover:duration-300 hover:ease-linear focus:bg-secondary focus:text-main"
-          title="Logout"
+          className="flex items-center rounded-lg cursor-pointer text-dark-third bg-fourth hover:duration-300 hover:ease-linear focus:bg-secondary focus:text-main gap-1"
         >
           <div className="h-10 w-10 flex items-center justify-center">
             <CiLogout className="text-xl font-extrabold" />
@@ -70,6 +68,7 @@ export default function Sidebar() {
         </button>
       </div>
       </div>
+
     </div>
   );
 }

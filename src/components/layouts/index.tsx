@@ -18,7 +18,7 @@ export default function Layout({ children, hideSidebar }: LayoutProps) {
         )}
 
         {/* Content Area */}
-        <main className={`flex-1 ${!hideSidebar ? 'md:ml-16 mb-16 md:mb-0' : ''}`}>
+        <main className={`flex-1 ${!hideSidebar ? 'ml-16' : ''}`}>
           {children}
         </main>
       </div>

@@ -78,7 +78,7 @@ const PlayerDashboardHome = () => {
   }, [pointsQuery.data, pointsQuery.isSuccess]);
 
   return (
-    <div className="space-y-6 p-4 md:p-12">
+    <div className="space-y-6 p-12">
 
       <ScoreboardWidget />
 
